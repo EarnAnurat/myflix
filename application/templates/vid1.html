@@ -5,6 +5,15 @@
         <div class="col-md-12 text-center">
             <h1>You are watching:</h1>
             <p>{{ data.title }}</p>
+            <!-- <p>{{ data.thumbnail }}</p> -->
+            <!-- <video controls autoplay> -->
+                <!-- <source src="{{ url_for('static', filename='000 Popeye the Sailor (7-14-1933).mp4')}}" type="video/mp4"> -->
+                <!-- <source src="{{ url_for('static', filename=data.title)}}" type="video/mp4">
+            </video> -->
+            <video controls autoplay>
+                <!-- <source src="{{ url_for('static', filename='000 Popeye the Sailor (7-14-1933).mp4')}}" type="video/mp4"> -->
+                <source src="http://34.105.179.114/pics/{{ data.title }}" type="video/mp4">
+            </video> 
         </div>
     </div>
  {% endblock %}

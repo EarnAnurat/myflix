@@ -4,17 +4,16 @@
     <h1>Video catalog</h1>
 
     <!--  Display the Term and Year here --->
-    <h3>Term: Spring 2019</h3>
 
     <div>
         <table class="table table-hover">
             <thead>
             <tr>
-                <th scope="col">Course ID</th>
+                <th scope="col">Episode</th>
                 <th scope="col">Title</th>
                 <th scope="col">Description</th>
-                <th scope="col">Credits</th>
-                <th scope="col">Term</th>
+                <th scope="col">Duration</th>
+                <th scope="col">thumbnail</th>
                 <th scope="col">Play</th>
             </tr>
             </thead>
@@ -23,14 +22,20 @@
             <!-- Construct the rest of courses here -->
             {% for data in videodata %}
             <tr>
-                <td scope='row'>{{ data["courseID"] }}</td>
+                <td scope='row'>{{ data["episode"] }}</td>
                 <td>{{ data["title"] }}</td>
                 <td>{{ data["description"] }}</td>
-                <td>{{ data["credits"] }}</td>
-                <td>{{ data["term"] }}</td>
+                <td>{{ data["duration"] }}</td>
+                <td>{{ data["thumbnail"] }}</td>
+                <td>
+                    <!-- <img src="{{ url_for('static', filename=data['thumbnail']) }}" width="150" height="100"> -->
+                    <img src="http://34.105.179.114/pics/{{ data['thumbnail'] }}" width="150" height="100">
+                </td>
+                <!-- <td><img src="{{ url_for('static', filename='images/000 Popeye the Sailor (7-14-1933)_000453.JPG')}}" width="100" height="50"></td> -->
                 <td>
                     <form action="{{url_for('vid1')}}" method="GET">
                         <input type="hidden" name="title" value="{{data['title']}}">
+                        <input type="hidden" name="thumbnail" value="{{data['thumbnail']}}">
                     <button class="button">Play</button>
                     </form>
                 </td>
