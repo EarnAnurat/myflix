@@ -4,7 +4,7 @@
     <h1>Video catalog</h1>
 
     <!--  Display the Term and Year here --->
-
+    <h3>data from "mongodb://localhost:27017/"</h3>
     <div>
         <table class="table table-hover">
             <thead>
@@ -46,8 +46,25 @@
         </table>
     </div>
 
+
+    <h3>data from "http://34.142.32.93/myflix/videos"</h3>
     <div>
-        <p>{{ title2 }}</p>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                <th scope="col">test title2</th>
+                <th scope="col">test thumbnail2</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for x in data2 %}
+                <tr>
+                    <td scope='row'>{{ data2.title2 }}</td>
+                    <td>{{ data2.thumbnail2 }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
 
 {% endblock %}

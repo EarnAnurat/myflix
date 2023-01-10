@@ -37,7 +37,7 @@ def videocatalog():
     
     videodata = vid.objects.all() # original
     # videodata = videos.objects.all() # cloud
-    return render_template("videocatalog.html", videodata=videodata,title2=title2,videocatalog=True)
+    return render_template("videocatalog.html", videodata=videodata, data2={"title2":title2, "thumbnail2":thumbnail2}, videocatalog=True)
 
 @app.route("/register") # 
 def register():
