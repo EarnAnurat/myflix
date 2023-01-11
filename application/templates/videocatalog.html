@@ -8,11 +8,11 @@
         <table class="table table-hover">
             <thead>
             <tr>
+                <th scope="col">Thumbnail</th>
                 <th scope="col">Episode</th>
                 <th scope="col">Title</th>
                 <th scope="col">Description</th>
                 <th scope="col">Duration</th>
-                <th scope="col">thumbnail</th>
                 <th scope="col">Play</th>
             </tr>
             </thead>
@@ -20,14 +20,11 @@
 
             {% for data in data2 %}
             <tr>
-                <td scope='row'>{{ data["episode"] }}</td>
+                <td scope='row'><img src="http://34.105.179.114/pics/{{ data['thumbnail'] }}" width="170" height="120"></td>
+                <td>{{ data["episode"] }}</td>
                 <td>{{ data["title"] }}</td>
                 <td>{{ data["description"] }}</td>
                 <td>{{ data["duration"] }}</td>
-                <td>{{ data["thumbnail"] }}</td>
-                <td>
-                    <img src="http://34.105.179.114/pics/{{ data['thumbnail'] }}" width="150" height="100">
-                </td>
                 <td>
                     <form action="{{url_for('vid1')}}" method="GET">
                         <input type="hidden" name="title" value="{{data['title']}}">
